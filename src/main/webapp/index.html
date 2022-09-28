@@ -49,7 +49,28 @@
 	<h2>servlet 에서 JDBC 를 사용하자! (오후에는 쿼리 실행 ! 파라미터로 내용 바꾸기)</h2>
 	<ol>
 		<li>다이나믹 웹 프로젝트에 Mysql Connector J jar를 참조(WEB-INF/lib 복사)</li>
-	
+		<li><a href="jdbcEmpList.do">사원 리스트 출력</a></li>
+		<li>파라미터를 이용해 부서별 사원 리스트 출력하기!
+			<ul>
+				<li><a href="jdbcEmpList2.do?deptno=10">10번 부서 직원 리스트</a></li>
+				<li><a href="jdbcEmpList2.do?deptno=20">20번 부서 직원 리스트</a></li>
+				<li><a href="jdbcEmpList2.do?deptno=33">33번 부서 직원 리스트</a></li>
+				<li><a href="jdbcEmpList2.do?deptno=40">40번 부서 직원 리스트</a></li>
+
+			</ul>
+		</li>
+		<li>CreateRreadUpateDetelet를 구현해보자 (부서 Scoot.emp)
+			<ul>
+				<li>
+					<a href="L04CRUDCreateForm.html">
+						Create : data를 등록 하는 인터페이스 (등록폼+등록처리 페이지)
+					</a>
+				</li>
+				<li>Read : data를 출력하는 인터페이스 (List,Detail+UpdateForm)</li>
+				<li>Update : data를 수정 하는 인터페이스 (UpdateForm+수정처리 페이지)</li>
+				<li>Delete : data를 삭제하는 인터페이스 (UpdateForm+삭제처리 페이지)</li>
+			</ul>
+		</li>
 	</ol>
 	
 </body>
