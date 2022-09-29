@@ -27,9 +27,9 @@ public class L03JdbcEmpListFindDept extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//파라미터==path이기 때문에 servlet을 생성하면서 파라미터 정의한다.
 		
+		resp.setContentType("text/html; charset=UTF-8");
 		String deptno_str=req.getParameter("deptno");
 		StringBuffer sb=new StringBuffer();
-		resp.setContentType("text/html; charset=UTF-8");
 		sb.append("<h1>"+deptno_str+"부서 사원 리스트</h1>");//문자열 더하기 연산과 같다.
 		
 		Connection conn=null;

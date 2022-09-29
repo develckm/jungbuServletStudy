@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import sevlet_study.com.dao.ScottDBConn;
 import sevlet_study.com.dto.EmpDto;
 
-@WebServlet("/crudEmpInsert.do")
-public class L04CRUDInsert extends HttpServlet{
+@WebServlet("/crudEmpInsert.do") // "/" 없거나 , 중복된 이름이 있으면 서버 오류!
+public class L04CRUDEmpInsert extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
@@ -60,7 +60,7 @@ public class L04CRUDInsert extends HttpServlet{
 		//성공시 empList 로 이동
 		//실패시 form 으로 이동
 		if(insert>0) {
-			resp.sendRedirect("jdbcEmpList2.do?deptno="+deptno_str);			
+			resp.sendRedirect("crudEmpList.do");			
 		}else {
 			resp.sendRedirect("L04CRUDCreateForm.html");			
 		}
