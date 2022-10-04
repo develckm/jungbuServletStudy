@@ -34,5 +34,4 @@ public class DeptDto {
 		return "\"dept\":{ \"deptno\":" + deptno + ",\"dname\":\"" + dname + "\",\"loc\":\"" + loc + "\" }";
 	}
 	
-	
 }

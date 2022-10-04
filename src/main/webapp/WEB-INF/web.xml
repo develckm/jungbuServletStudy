@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>sevlet_study</display-name>
+  <!-- 서버의 홈 주소를 입력했을 때(path가 없을 때) 기본 리소스의 이름 -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -9,4 +10,19 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+  <!-- DD 배포서술자 : 서버의 설정을 개발자가 수정하는 곳 -->
+  <!-- 세션객체의 만료시간 지정 (분단위) -->
+  <session-config>
+  	<session-timeout>5</session-timeout>
+  </session-config>
+  <!-- 동적 리소스 서블릿의 url 맵핑 == @WebServlet() -->
+  <servlet>
+  	<servlet-name>getSession</servlet-name>
+  	<servlet-class>sevlet_study.com.servlet.L10GetSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getSession</servlet-name>
+  	<url-pattern>/getSession.do</url-pattern>
+  </servlet-mapping>
 </web-app>

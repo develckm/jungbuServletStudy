@@ -20,5 +20,6 @@ deptInsert.deptno.onchange=(e)=>{
 			deptnoMsg.innerText="사용할 수 있는 부서번호";
 
 		}
-	})
+	});
+	//js => 열심히 해서 시간을 만들어 주세요!!! 
 }

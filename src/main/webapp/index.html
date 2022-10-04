@@ -82,7 +82,50 @@
 		<li><a href="L06JspDeptList.jsp">deptList 출력(model1 비권장 : 한페지에서 db접속 + 출력)</a></li>
 		<li><a href="jspDeptList.do">Java Servlet + jsp 로 deptList 출력(권장)</a></li>
 	</ul>
-	
+	<h2> HttpSession </h2>
+	<ul>
+		<li>로그인시 서버에서 유지시키는 객체인 세션을 만들어보자
+			<ol>
+				<li>톰캣 서버는 접속하는 클라이언트와 대응되는(고유아이디제공) 세션 객체를 생성한다.</li>
+				<li>세션의 기본 만료시간은 30분인데 30분안에 재접속 시 만료시간을 리셋한다. </li>
+				<li>세션 객체에 다른 객체를 저장해 둘 수 있는데 보통 로그인에 이용하기 위해 사용된다.</li>
+				<li>세션의 만료를 임의로 지정해 로그아웃에 이용할 수 있다. session.invalidate()</li>
+				<li>특정 객체만 삭제해서 로그아웃을 구현할 수도 있다. session.removeAttribute("key")</li>
+				<li>DD (Development Descriptor) webapp>WEB_INF>web.xml : 
+					배포서술자(톰캣서버 설정)에 session config로 만료시간을 지정할 수 있다. </li>
+				<li> webapp>WEB_INF(배포되지 않는 경로) : 서버설정이나 라이브러리를 올리는 경로</li>	
+			</ol>
+		</li>
+		<li> <a href="createSession.do">세션 객체 생성 (doGet)</a> </li>
+		<li>
+			<form action="createSession.do" method="post">
+				<input placeholder="로그인 아이디" size="12" name="id"> /
+				<input placeholder="로그인 이름" size="12" name="name">
+				<button>세션 객체 생성 (doPost)</button>
+			</form>
+		</li>
+		<li> <a href="getSession.do">세션 객체 불러오기</a> </li>
+		<li> <a href="removeSession.do">세션 객체 삭제</a> </li>
+		<li> <a href="invalidateSession.do">세션 객체 만료</a> </li>
+	</ul>
+	<h2>Scott.Emp 로그인 구현 (사번+이름이 동일하면 로그인 성공)</h2>
+	<form action="sessionEmpLogin.do" method="post">
+		<p>
+			<label>
+				이름 : 
+				<input name="ename" type="text" value="king"> 
+			</label>
+		</p>
+		<p>
+			<label>
+				사번 :
+				<input name="empno" type="password" value="7839"> 
+			</label>
+		</p>
+		<p>
+			<button>로그인</button>
+		</p>
+	</form>
 </body>
 </html>
 
